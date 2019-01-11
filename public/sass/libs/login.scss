@@ -1,0 +1,20 @@
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.connection-box {
+    border: black 1px solid;
+    display: flex;
+}
+
+input {
+    display: block;
+}
+
+input:nth-child(1) {
+    border-bottom: none;
+}

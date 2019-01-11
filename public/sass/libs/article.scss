@@ -1,0 +1,102 @@
+.article, .div-addComment, .div-comment, .div-action {
+    margin: 15px auto;
+    background: white;
+    border-radius: 5px;
+    padding: 10px;
+    border: #dfdfdf 1px solid;
+}
+
+.article {
+    margin-top: -25px;
+}
+
+.bannerInArticle {
+    height: 150px;
+    width: 100%;
+    background: #374755;
+}
+
+.article-footer {
+    color: #333333;
+    display: flex;
+    justify-content: space-between;
+    background: #f7f7f7;
+    border-top: solid 1px #dfdfdf;
+    margin: 0 -10px -10px -10px;
+}
+
+.article-info {
+    padding: 5px;
+    display: flex;
+}
+
+.article-info img {
+    height: 20px;
+    margin: 0px 5px;
+    transform: translateY(1px);
+}
+
+article h1 {
+    text-align: center;
+    margin: 5px 0px;
+}
+
+.div-addComment {
+    margin-top: 15px;
+    display: none;
+    transition-duration: 1s;
+    opacity: 0;
+}
+
+input,textarea {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin: 5px 1px;
+    resize: vertical;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.493);
+}
+
+input[type=submit] {
+    background: none;
+}
+
+input[type=submit]:hover {
+    background: whitesmoke;
+}
+
+
+.div-comment h3 ,.div-comment p {
+    margin: 5px 0px;
+}
+
+.div-action {
+    display: flex;
+    padding: 0;
+}
+
+.action {
+    width: 33.3%;
+    flex: 1;
+    padding: 5px;
+    text-align: center;
+}
+
+.action1:hover {
+    background: rgb(99, 187, 228);
+}
+
+.action2:hover {
+    background: rgb(10, 238, 41);
+}
+
+.action3:hover {
+    background: rgb(233, 32, 32);
+}
+
+.date {
+    font-size: 16px;
+    font-weight: 200;
+    opacity: 0.8;
+}

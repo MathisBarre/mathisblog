@@ -1,0 +1,13 @@
+Objectif du jour :
+1- Creer la vue de connection / création de compte
+2- Gerer l'ajout de user
+
+
+
+A faire :
+Footer :
+    -Ajouter du contenu
+    -Mettre en bas quand le contenu n'est pas assez grand.
+
+Gestion de compte :
+    a voir
