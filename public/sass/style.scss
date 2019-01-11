@@ -41,86 +41,13 @@ a {
    
 }*/
 
-.topbar a {
-    color: whitesmoke;
-}
-
-.topbar-nav a {
-    padding: 0 5px;
-    color: rgba(163, 163, 163, 0.774);
-}
-
-.topbar-nav .active {
-    color: whitesmoke;
-    opacity: .8;
-}
-
-.topbar-nav a:hover {
-    color: whitesmoke!important;
-    opacity: 1;
-    font-size: bold;
-    font-size: 18px;
-}
-
-.topbar-button {
-    background: green;
-    color: whitesmoke;
-    border-radius: 10px;
-    padding: 7px;
-    margin-right: 7px;
-}
-
-.logo {
-    margin: 10px 0;
-}
+@import "libs/topbar.scss";
 
 /**********/
 /* BANNER */
 /**********/
 
-.banner-box {
-    width: 100%;
-    position: relative;
-}
-
-.banner-img {
-    width: 100%;
-    transform: scaleX(-1);
-}
-
-.banner-absolute-box {
-    position: absolute;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    
-}
-
-.banner-centered-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: whitesmoke;
-    height: 100%;
-}
-
-.banner-title {
-    margin: 1% 0 ;
-}
-
-.banner-description {
-    margin: 1% 0;
-    
-}
-
-.banner-description a {
-    color: whitesmoke;
-}
-
-.banner-description a:hover {
-    color: whitesmoke;
-    text-decoration: underline;
-}
+@import "libs/banner.scss";
 
 /**********/
 /*  MAIN  */

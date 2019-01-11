@@ -1,0 +1,44 @@
+
+.banner-box {
+    width: 100%;
+    position: relative;
+}
+
+.banner-img {
+    width: 100%;
+    transform: scaleX(-1);
+}
+
+.banner-absolute-box {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.banner-centered-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: whitesmoke;
+    height: 100%;
+}
+
+.banner-title {
+    margin: 1% 0 ;
+}
+
+.banner-description {
+    margin: 1% 0;
+    
+}
+
+.banner-description a {
+    color: whitesmoke;
+}
+
+.banner-description a:hover {
+    color: whitesmoke;
+    text-decoration: underline;
+}

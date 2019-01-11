@@ -1,0 +1,32 @@
+.topbar a {
+    color: whitesmoke;
+}
+
+.topbar-nav a {
+    padding: 0 5px;
+    color: rgba(163, 163, 163, 0.774);
+}
+
+.topbar-nav .active {
+    color: whitesmoke;
+    opacity: .8;
+}
+
+.topbar-nav a:hover {
+    color: whitesmoke!important;
+    opacity: 1;
+    font-size: bold;
+    font-size: 18px;
+}
+
+.topbar-button {
+    background: green;
+    color: whitesmoke;
+    border-radius: 10px;
+    padding: 7px;
+    margin-right: 7px;
+}
+
+.logo {
+    margin: 10px 0;
+}
