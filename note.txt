@@ -1,8 +1,9 @@
-Objectif du jour :
+Objectifs :
 1- Creer la vue de connection / création de compte
 2- Gerer l'ajout de user
 
-
+1- Redéfinir le git css :
+    Utiliser SASS -> mettre des class génériques et si il y à des thèmes particulier ressemblant on @extends grâce à sass
 
 A faire :
 Footer :

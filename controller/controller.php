@@ -71,6 +71,10 @@ function showError($error) {
     require_once("view/front/error.php");
 }
 
-function showConnection() {
-    require_once("view/back/connection.php");
+function showLogin() {
+    require_once("view/back/login.php");
+}
+
+function showSignUp() {
+    require_once("view/back/signUp.php");
 }

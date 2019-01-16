@@ -1,42 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  margin: 0;
-  padding: 0;
-  color: rgba(0, 0, 0, 0.8);
-  font-size: 16px;
-  min-height: 100%;
-}
-
-a {
-  color: rgba(0, 0, 0, 0.8);
-  transition-duration: 0.5s;
-  text-decoration: none;
-}
-
-.centered-box {
-  margin: 0px auto;
-  width: 1050px;
-  padding: 0 5px;
-}
-
-.topbar {
-  background-color: #202931;
-  color: whitesmoke;
-}
-
-.topbar-box {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/*.topbar-nav {
-   
-}*/
 .topbar a {
   color: whitesmoke;
 }
@@ -70,9 +31,6 @@ a {
   margin: 10px 0;
 }
 
-/**********/
-/* BANNER */
-/**********/
 .banner-box {
   width: 100%;
   position: relative;
@@ -113,6 +71,76 @@ a {
 .banner-description a:hover {
   color: whitesmoke;
   text-decoration: underline;
+}
+
+body.login {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.connection {
+  border: black 1px solid;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 5px;
+}
+.connection form {
+  margin: 10px 0px;
+}
+.connection .brand {
+  display: flex;
+  align-items: center;
+}
+.connection .brand img {
+  margin-right: 10px;
+}
+
+.back {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 16px;
+  min-height: 100%;
+}
+
+a {
+  color: rgba(0, 0, 0, 0.8);
+  transition-duration: 0.5s;
+  text-decoration: none;
+}
+
+.centered-box {
+  margin: 0px auto;
+  width: 1050px;
+  padding: 0 5px;
+}
+
+.topbar {
+  background-color: #202931;
+  color: whitesmoke;
+}
+
+.topbar-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /**********/

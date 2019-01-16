@@ -1,4 +1,6 @@
-
+@import "libs/topbar.scss";
+@import "libs/banner.scss";
+@import "libs/login.scss";
 
 * {
     box-sizing: border-box;
@@ -36,18 +38,6 @@ a {
     align-items: center;
     
 }
-
-/*.topbar-nav {
-   
-}*/
-
-@import "libs/topbar.scss";
-
-/**********/
-/* BANNER */
-/**********/
-
-@import "libs/banner.scss";
 
 /**********/
 /*  MAIN  */

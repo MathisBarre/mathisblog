@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once("controller/front.php");
+require_once("controller/controller.php");
 require_once("model/ArticleManager.php");
 $ArticleManager = new \mania\blog\model\ArticleManager();
 

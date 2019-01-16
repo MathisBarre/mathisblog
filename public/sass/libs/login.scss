@@ -1,20 +1,37 @@
 
-body {
+body.login {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
-.connection-box {
+.connection{
     border: black 1px solid;
     display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 5px; 
+
+    form {
+        margin: 10px 0px;
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+
+        img {
+            margin-right: 10px;
+        }
+    }
 }
 
-input {
+.back {
+    position: absolute ;
+    top: 5px;
+    left: 5px;
     display: block;
-}
-
-input:nth-child(1) {
-    border-bottom: none;
 }

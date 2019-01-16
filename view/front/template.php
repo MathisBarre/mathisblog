@@ -18,7 +18,7 @@
              --><a href="index.php?action=showContact">Contact</a>
              
             </nav>
-            <a href="#"><div class="topbar-button">Se connecter</div></a>
+            <a href="index.php?action=showLogin"><div class="topbar-button">Se connecter</div></a>
         </div>
     </header>
     
