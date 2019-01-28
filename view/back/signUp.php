@@ -14,10 +14,10 @@
             <img src="public/img/connect.svg" alt="Icône de connexion">
             <h3>Créer un compte</h3>
         </div>
-        <form action="post">
-            <input type="text" placeholder="Login" name="login">
+        <form method="post" action="index.php?action=createAccount">
+            <input type="text" placeholder="Nickname" name="Nickname">
             <input type="password" placeholder="Password" name="password">
-            <input type="password" placeholder="Repeat password " name="password 2">
+            <input type="password" placeholder="Repeat password " name="password2">
             <input type="submit">
         </form>
         <a href="index.php?action=showLogin">Se connecter</a>

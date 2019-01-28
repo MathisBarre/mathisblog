@@ -24,6 +24,24 @@ try {
             throw new Exception("Cette article n'existe pas ou plus", 1);
             
         } 
+        if (actionIs("createAccount")) {
+            $login = htmlspecialchars($_POST["login"]);
+            $password = $_POST["password"];
+            $password2 = $_POST["password2"];
+            if (!($UserManager->isUserExist($_POST["login"]))) {
+                if ($password === $password2) {
+                    # code...
+                }
+                else {
+                    throw new Exception("Les deux mots de passe entrés ne sont pas les mêmes", 1);
+                    
+                }
+            } 
+            else {
+                throw new Exception("Nom d'utilisateur déjà utilisé", 1);
+                
+            }
+        }
         elseif (function_exists($action)) {
 
             $action();
