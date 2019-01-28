@@ -17,33 +17,42 @@ function actionIs($action) {
 try {
    
     if (isset($_GET["action"]) AND !empty($_GET["action"])) {
-        // Fonction dynamique
-
+        
         $action = $_GET["action"];
+        
         if (actionIs("showAnArticle") AND !isset($_GET["id"]) AND !($ArticleManager->isArticleExist($_GET["id"]))) {
+
             throw new Exception("Cette article n'existe pas ou plus", 1);
             
         } 
+        // Gère la création de compte
         if (actionIs("createAccount")) {
-            $login = htmlspecialchars($_POST["login"]);
+
+            $nickname = htmlspecialchars($_POST["nickname"]);
+
             $password = $_POST["password"];
+
             $password2 = $_POST["password2"];
-            if (!($UserManager->isUserExist($_POST["login"]))) {
+
+            if (!($UserManager->isUserExist($nickname))) {
+
                 if ($password === $password2) {
-                    # code...
+                    createAccount();
                 }
                 else {
+
                     throw new Exception("Les deux mots de passe entrés ne sont pas les mêmes", 1);
                     
                 }
             } 
             else {
+
                 throw new Exception("Nom d'utilisateur déjà utilisé", 1);
                 
             }
         }
         elseif (function_exists($action)) {
-
+            // Fonction dynamique
             $action();
 
         } 
@@ -55,7 +64,9 @@ try {
 
     } 
     else {
+
         showHome();
+
     }
 } 
 catch (Exception $e) {
