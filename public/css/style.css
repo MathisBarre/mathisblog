@@ -31,6 +31,15 @@
   margin: 10px 0;
 }
 
+.nicknameBox {
+  display: flex;
+  align-items: center;
+}
+
+.nicknameInBar {
+  margin-right: 5px;
+}
+
 .banner-box {
   width: 100%;
   position: relative;

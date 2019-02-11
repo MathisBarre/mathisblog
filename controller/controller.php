@@ -49,7 +49,7 @@ function addComment() {
     // Validation / sécurisation du nickname
     if (isset($_SESSION["nickname"])) {
         $writter = $_SESSION["nickname"];
-    } elseif (!($UserManager->isNicknameAlreadyUsed($_POST["nickname"]))) {
+    } elseif (!($UserManager->isNicknameAlreadyUsed(htmlspecialchars($_POST["nickname"])))) {
         $writter = htmlspecialchars($_POST["nickname"]);
     } else {
         throw new Exception("Nickname already used by a registred member", 1);
@@ -83,5 +83,11 @@ function createAccount($nickname, $password){
     require_once("model/UserManager.php");
     $UserManager = new \mania\blog\model\UserManager();
     $UserManager->addAccount($nickname, $password);
+    $_SESSION["nickname"] = $nickname;
     require_once("view/back/admin.php");
+}
+
+function deconnection() {
+    unset($_SESSION["nickname"]);
+    header("location:".  $_SERVER['HTTP_REFERER']); 
 }

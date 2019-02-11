@@ -18,7 +18,18 @@
              --><a href="index.php?action=showContact">Contact</a>
              
             </nav>
-            <a href="index.php?action=showLogin"><div class="topbar-button">Se connecter</div></a>
+            <?php if (!isset($_SESSION["nickname"])) { ?>
+                <a href="index.php?action=showLogin"><div class="topbar-button">Se connecter</div></a>
+            <?php } else { ?>
+                <div class="nicknameBox">
+                    <p>
+                        <span class="nicknameInBar"><?= $_SESSION["nickname"] ?><span>
+                        <a href="index.php?action=deconnection">
+                            <div class="topbar-button">Deconnexion</div>
+                        </a>
+                    </p>
+                </div>
+            <?php } ?>
         </div>
     </header>
     
