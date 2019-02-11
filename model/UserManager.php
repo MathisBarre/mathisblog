@@ -23,4 +23,12 @@ class UserManager extends Manager {
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
         $req->execute([$nickname,$hashedPassword]);
     }
+
+    public function getHash($nickname) {
+        $db = $this->dbConnect();
+        $req = $db->prepare("SELECT * FROM user WHERE nickname= ?");
+        $req->execute([$nickname]);
+        $data = $req->fetch();
+        return $data["password"];
+    }
 }

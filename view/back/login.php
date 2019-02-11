@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="public/css/style.css">
 </head>
 <body class="login">
-    <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" class="back"><- Revenir en arrière</a>
+    <a href="index.php" class="back"><- Revenir en arrière</a>
     <div class="connection">
         <div class="brand">
             <img src="public/img/connect.svg" alt="Icône de connexion">
             <h3>Se connecter</h3>
         </div>
-        <form action="post">
+        <form method="post" action="index.php?action=connection">
             <input type="text" placeholder="Login" name="login">
             <input type="password" placeholder="Password" name="password">
             <input type="submit">

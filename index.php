@@ -39,12 +39,21 @@ try {
 
             if (!($UserManager->isNicknameAlreadyUsed($nickname))) {
 
-                if ($password === $password2) {
-                    createAccount($nickname,$password);
-                }
-                else {
+                if (strlen($password) >= 6) {
 
-                    throw new Exception("Les deux mots de passe entrés ne sont pas les mêmes", 1);
+                    if ($password === $password2) {
+
+                        createAccount($nickname,$password);
+
+                    }
+
+                    else {
+    
+                        throw new Exception("Les deux mots de passe entrés ne sont pas les mêmes", 1);
+                        
+                    }
+                } else {
+                    throw new Exception("Mot de passe trop petit (moins de 6 caractères)", 1);
                     
                 }
             } 
@@ -53,6 +62,24 @@ try {
                 throw new Exception("Nom d'utilisateur déjà utilisé", 1);
                 
             }
+        }
+        elseif (actionIs("connection")) {
+
+            require_once("model/UserManager.php");
+            $UserManager = new mania\blog\model\UserManager();
+            $hash = $UserManager->getHash($_POST["login"]);
+
+            if ( password_verify($_POST["password"], $hash) ) {
+
+                connection($_POST["login"]);
+
+            } else {
+                
+                throw new Exception("Mauvais mot de passe" . $hash, 1);
+                
+
+            }
+
         }
         elseif (function_exists($action)) {
             // Fonction dynamique

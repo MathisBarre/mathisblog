@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="public/css/style.css">
 </head>
 <body class="login">
-    <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" class="back"><- Revenir en arrière</a>
+    <a href="index.php" class="back"><- Revenir en arrière</a>
     <div class="connection">
         <div class="brand">
             <img src="public/img/connect.svg" alt="Icône de connexion">

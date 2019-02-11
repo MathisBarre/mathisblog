@@ -28,14 +28,16 @@ ob_start();
 </div>
 <div class="div-addComment centered-box" id="addComment">
     <form action="index.php?action=addComment&id=<?= $_GET["id"]?>" method="post">
-    <?php if (!isset($_SESSION["connected"])) { ?><input type="text" name="nickname" id="nickname" placeholder="Pseudonyme ou nom/prénom"><?php } ?>
+        <?php if (!isset($_SESSION["nickname"])) { ?>
+            <input type="text" name="nickname" id="nickname" placeholder="Pseudonyme ou nom/prénom">
+        <?php } ?>
         <textarea name="message" id="message" rows="5" placeholer="Votre message"></textarea>
         <input type="submit" value="Envoyer votre message">
     </form>
 </div>
 <?php while ($dataComment = $dataComments->fetch()) { ?>
     <div class="div-comment centered-box">
-        <h3><?= $dataComment["writter"] ?>  <span class="date">- <?= $dataComment["DATE"] ?></span></h3>
+        <h3><?= $dataComment["writter"] ?>  <span class="date">- <?= $dataComment["mDATE"] ?></span></h3>
         <p><?= $dataComment["content"] ?></p>
     </div>
 <?php 

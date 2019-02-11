@@ -17,14 +17,14 @@ class CommentManager extends Manager
     public function getComments($id_article) {
         $db = $this->dbConnect();
         $req = $db->prepare(
-        "SELECT content, DATE_FORMAT(date, '%d/%m/%Y (%Hh%i)') AS DATE,
+        "SELECT content, DATE_FORMAT(date, '%d/%m/%Y (%Hh%i)') AS mDATE,
         CASE 
             WHEN writter=u.nickname THEN u.nickname
             ELSE CONCAT('(Invité)  ', writter)
         END AS writter
         FROM comments c
         LEFT JOIN user u ON c.writter = u.nickname
-        WHERE id_article = ?
+        WHERE id_article = 3
         ORDER BY date");
         $req->execute([$id_article]);
         return $req;

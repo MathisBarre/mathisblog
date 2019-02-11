@@ -91,3 +91,8 @@ function deconnection() {
     unset($_SESSION["nickname"]);
     header("location:".  $_SERVER['HTTP_REFERER']); 
 }
+
+function connection($nickname) {
+    $_SESSION["nickname"] = $nickname;
+    header("location: index.php"); 
+}
