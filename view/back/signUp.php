@@ -15,7 +15,7 @@
             <h3>Créer un compte</h3>
         </div>
         <form method="post" action="index.php?action=createAccount">
-            <input type="text" placeholder="Nickname" name="Nickname">
+            <input type="text" placeholder="Nickname" name="nickname">
             <input type="password" placeholder="Password" name="password">
             <input type="password" placeholder="Repeat password " name="password2">
             <input type="submit">

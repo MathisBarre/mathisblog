@@ -28,16 +28,19 @@ try {
         // Gère la création de compte
         if (actionIs("createAccount")) {
 
+            require_once("model/UserManager.php");
+            $UserManager = new \mania\blog\model\UserManager();
+
             $nickname = htmlspecialchars($_POST["nickname"]);
 
             $password = $_POST["password"];
 
             $password2 = $_POST["password2"];
 
-            if (!($UserManager->isUserExist($nickname))) {
+            if (!($UserManager->isNicknameAlreadyUsed($nickname))) {
 
                 if ($password === $password2) {
-                    createAccount();
+                    createAccount($nickname,$password);
                 }
                 else {
 

@@ -79,10 +79,9 @@ function showSignUp() {
     require_once("view/back/signUp.php");
 }
 
-function createAccount($nickname,$password){
-    require_once("model/UserManager.php")
+function createAccount($nickname, $password){
+    require_once("model/UserManager.php");
     $UserManager = new \mania\blog\model\UserManager();
-
     $UserManager->addAccount($nickname, $password);
-    require_once("view/back/admin.php")
+    require_once("view/back/admin.php");
 }

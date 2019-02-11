@@ -16,4 +16,11 @@ class UserManager extends Manager {
             return false;
         }
     }
+
+    public function addAccount($nickname,$password) {
+        $db = $this->dbConnect();
+        $req = $db->prepare("INSERT INTO user (nickname,password) VALUES (?,?)");
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+        $req->execute([$nickname,$hashedPassword]);
+    }
 }
