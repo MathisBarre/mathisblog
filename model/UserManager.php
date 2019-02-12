@@ -24,11 +24,11 @@ class UserManager extends Manager {
         $req->execute([$nickname,$hashedPassword]);
     }
 
-    public function getHash($nickname) {
+    public function getInfosFromNickname($nickname) {
         $db = $this->dbConnect();
         $req = $db->prepare("SELECT * FROM user WHERE nickname= ?");
         $req->execute([$nickname]);
         $data = $req->fetch();
-        return $data["password"];
+        return $data;
     }
 }

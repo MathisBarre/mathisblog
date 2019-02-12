@@ -22,14 +22,15 @@
                 <a href="index.php?action=showLogin"><div class="topbar-button">Se connecter</div></a>
             <?php } else { ?>
                 <div class="nicknameBox">
-                    <p>
-                        <span class="nicknameInBar"><?= $_SESSION["nickname"] ?><span>
-                        <a href="index.php?action=deconnection">
-                            <div class="topbar-button">Deconnexion</div>
-                        </a>
-                    </p>
+                    <p class="nicknameInBar"><?= $_SESSION["nickname"] ?><p>
+                    <a href="index.php?action=deconnection">
+                        <div class="topbar-button" id="btn-deconnection">Deconnexion</div>
+                    </a>
                 </div>
             <?php } ?>
+            <?php if (isset($_SESSION["role"]) AND $_SESSION["role"] = "admin") { ?>
+                <a href="index.php?action=showAdmin"><div class="topbar-button" id="admin-btn">Administration</div></a>
+            <?php }?>
         </div>
     </header>
     

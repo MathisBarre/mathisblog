@@ -67,15 +67,18 @@ try {
 
             require_once("model/UserManager.php");
             $UserManager = new mania\blog\model\UserManager();
-            $hash = $UserManager->getHash($_POST["login"]);
+            $userInfos = $UserManager->getInfosFromNickname($_POST["login"]);
+            $nickname = $userInfos["nickname"];
+            $hash = $userInfos["password"];
+            $role = $userInfos["role"];
 
             if ( password_verify($_POST["password"], $hash) ) {
 
-                connection($_POST["login"]);
+                connection($nickname,$role);
 
             } else {
                 
-                throw new Exception("Mauvais mot de passe" . $hash, 1);
+                throw new Exception("Mauvais mot de passe", 1);
                 
 
             }

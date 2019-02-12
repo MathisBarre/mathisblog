@@ -13,7 +13,7 @@ ob_start();
         <?= $dataArticle["content"] ?>
     </p>
     <div class="article-footer">
-        <div class="article-info">Écrit le <?= $dataArticle["date"] ?></div>
+        <div class="article-info">Écrit le <?= $dataArticle["date"] ?> par <?= $dataArticle["writter"] ?></div>
         <div class="article-info">
             <img src="public/img/eye.svg" alt="icone oeil"> x
             <img src="public/img/thumbs-up.svg" alt="icone like"> <?= $dataArticle["nb_like"] ?>

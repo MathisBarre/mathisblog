@@ -34,10 +34,21 @@
 .nicknameBox {
   display: flex;
   align-items: center;
+  border: green solid 3px;
+  border-radius: 10px;
 }
 
 .nicknameInBar {
-  margin-right: 5px;
+  margin: 0px 5px;
+}
+
+#admin-btn {
+  background-color: #a10c2c;
+}
+
+#btn-deconnection {
+  margin: 0px;
+  border-radius: 10px 0px 0px 10px;
 }
 
 .banner-box {

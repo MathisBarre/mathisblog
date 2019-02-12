@@ -24,7 +24,7 @@ class CommentManager extends Manager
         END AS writter
         FROM comments c
         LEFT JOIN user u ON c.writter = u.nickname
-        WHERE id_article = 3
+        WHERE id_article = ?
         ORDER BY date");
         $req->execute([$id_article]);
         return $req;

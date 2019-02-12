@@ -9,9 +9,9 @@ class ArticleManager extends Manager
     public function getArticlesPreviews() {
         $db = $this->dbConnect();
         $req = $db->query(
-            "SELECT  a.id, a.title , a.pre_content , a.nb_like, COUNT(c.id) AS nb_comment , DATE_FORMAT(a.DATE, '%d/%m/%Y (%Hh%i)') AS date , a.vizu_img ,u.nickname AS writter
+            "SELECT  a.id, a.title , a.pre_content , a.nb_like, COUNT(c.id) AS nb_comment , DATE_FORMAT(a.DATE, '%d/%m/%Y (%Hh%i)') AS date , a.vizu_img , a.writter
             FROM articles a
-            LEFT JOIN USER u ON a.id_writter = u.id
+            LEFT JOIN USER u ON a.writter = u.nickname
             LEFT JOIN comments c ON a.id = c.id_article
             GROUP BY a.id
             ORDER BY a.id DESC ");
@@ -21,9 +21,9 @@ class ArticleManager extends Manager
     public function getArticleInfos($id) {
         $db = $this->dbConnect();
         $req = $db->prepare(
-            "SELECT a.id,nb_like, a.content, title , u.nickname AS writter, COUNT(c.id) AS nb_comment, DATE_FORMAT(a.DATE, '%d/%m/%Y (%Hh%i)') AS date
+            "SELECT a.id,nb_like, a.content, title , a.writter, COUNT(c.id) AS nb_comment, DATE_FORMAT(a.DATE, '%d/%m/%Y (%Hh%i)') AS date
             FROM articles a
-            LEFT JOIN USER u ON a.id_writter = u.id
+            LEFT JOIN USER u ON a.writter = u.nickname
             LEFT JOIN COMMENTs c ON a.id = c.id_article
             WHERE a.id = ?");
         $req->execute([$id]);
@@ -50,5 +50,11 @@ class ArticleManager extends Manager
         } else {
             return false;
         }
+    }
+
+    public function addArticle($title,$content) {
+        $db = $this->dbConnect();
+        $query = $db->prepare("INSERT INTO articles (title,content,writter) VALUES (?,?,?)");
+        $query->execute([$title,$content,$_SESSION["nickname"]]);
     }
 }

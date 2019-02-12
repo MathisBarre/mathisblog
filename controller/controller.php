@@ -79,20 +79,39 @@ function showSignUp() {
     require_once("view/back/signUp.php");
 }
 
+function showAdmin() {
+    require_once("view/back/admin.php");
+}
+
 function createAccount($nickname, $password){
     require_once("model/UserManager.php");
     $UserManager = new \mania\blog\model\UserManager();
     $UserManager->addAccount($nickname, $password);
     $_SESSION["nickname"] = $nickname;
-    require_once("view/back/admin.php");
+    header("location: index.php");
 }
 
 function deconnection() {
-    unset($_SESSION["nickname"]);
+    session_destroy();
+    session_start();
     header("location:".  $_SERVER['HTTP_REFERER']); 
 }
 
-function connection($nickname) {
+function connection($nickname, $role) {
+
     $_SESSION["nickname"] = $nickname;
-    header("location: index.php"); 
+    $_SESSION["role"] = $role;
+    if ($role === "admin") {
+        header("location: index.php?action=showAdmin");
+    } else {
+        header("location: index.php?role=".$_SESSION["role"]);
+    }
+}
+
+function addArticle() {
+    // seulement si session role = admin
+    require_once("model/ArticleManager.php");
+    $ArticleManager = new \mania\blog\model\ArticleManager();
+    $ArticleManager->addArticle($_POST["titleArticle"], $_POST["contentArticle"]);
+    header("location: index.php");
 }
